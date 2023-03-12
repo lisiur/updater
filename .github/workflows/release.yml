@@ -116,10 +116,7 @@ jobs:
     steps:
       - run: |
           mkdir -p static
-          echo $ARTIFACT_PATHS
-          cp $ARTIFACT_PATHS/latest.json static/latest.json
-        env:
-          ARTIFACT_PATHS: ${{ needs.build-tauri.outputs.artifactPaths }}
+          cp /Users/runner/work/updater/updater/latest.json static/latest.json
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
