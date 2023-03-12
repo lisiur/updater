@@ -84,6 +84,7 @@ jobs:
         with:
           args: --target ${{ matrix.target }}
           releaseId: ${{ needs.create-release.outputs.release_id }}
+          releaseBody: "New version"
 
   publish-release:
     permissions:
@@ -114,6 +115,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
+          mkdir -p ${{ github.workspace }}/docs
           wget -O ${{ github.workspace }}/docs/latest.json https://github.com/lisiur/updater/releases/download/${{ github.ref_name }}/latest.json
 
       - uses: peaceiris/actions-gh-pages@v3
