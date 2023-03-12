@@ -1,10 +1,10 @@
 {
-  "version": "0.0.10",
-  "notes": "",
-  "pub_date": "2023-03-12T08:08:54.652Z",
+  "version": "0.0.12",
+  "notes": "New version",
+  "pub_date": "2023-03-12T10:37:58.794Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTQ3lwT1Ird01RL2FGK2wvSzhWTzIzRVV0b1hCc2dkbitudlNOeGJFLzJqdUljcVRJenFwM1pYdzZuK1lrcERQNjFSdVNZSDdUSWJjYTBzdUN5eTI0WkpHazl1cVRhcGdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc4NjA4NTMxCWZpbGU6dXBkYXRlci5hcHAudGFyLmd6CnV2YW9GV2E0VEFQYUt2RkVwY1ltUkc5WTUzeSsvRVZNOHhPMkhHVnNsNGl1ZzA5aWFxUzVJdnRaZVdIOXBpcnFsd2ZORi9jdWFCL2U4SUZscHRCYkRnPT0K",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTQ3lwT1Ird01RL1Q3NU1mVUx2ZUtNUWVlWVpEaUw4bFBOYXZrYkhvYTBRWGFoTzAvbmc3WmtRMTZoQS9KcmZEWkZXbHRWTlVlTFh4OEV6Mnk0aVg3Nnl5WFNCdHZoc1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc4NjE3NDc2CWZpbGU6dXBkYXRlci5hcHAudGFyLmd6Clo3RDhVQzNkVTFLeUVZaTF3NWkwVUErb2l1R0o3Q0tEZXZpenF2N24xYWpmREFsMXNld1huMGZ1d0hsaFNKT0k4bXRnWXNYNzhWSjNuelovR2tSRUNBPT0K",
       "url": "https://github.com/lisiur/updater/releases/latest/download/updater_aarch64.app.tar.gz"
     }
   }
