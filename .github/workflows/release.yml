@@ -116,7 +116,8 @@ jobs:
     steps:
       - run: |
           mkdir -p static
-          cp /Users/runner/work/updater/updater/latest.json static/latest.json
+          wget https://github.com/lisiur/updater/releases/download/v$PACKAGE_VERSION/latest.json
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
