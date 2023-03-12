@@ -55,6 +55,9 @@ jobs:
             target: x86_64-pc-windows-msvc
 
     runs-on: ${{ matrix.platform }}
+    outputs:
+      artifactPaths: ${{ steps.build-tauri.outputs.artifactPaths }}
+
     steps:
       - uses: actions/checkout@v3
       - name: setup node
@@ -75,6 +78,7 @@ jobs:
       - name: install frontend dependencies
         run: npm i -g pnpm && pnpm install
       - uses: tauri-apps/tauri-action@dev
+        id: build-tauri
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
@@ -104,3 +108,19 @@ jobs:
               draft: false,
               prerelease: false
             })
+
+  updater:
+    runs-on: ubuntu-latest
+    needs: [build-tauri, publish-release]
+
+    steps:
+      - run: |
+          mkdir -p static
+          cp $ARTIFACT_PATHS/latest.json static/latest.json
+        env:
+          ARTIFACT_PATHS: ${{ needs.build-tauri.outputs.artifactPaths }}
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./static
+    
