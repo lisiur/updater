@@ -113,8 +113,7 @@ jobs:
 
     steps:
       - run: |
-          mkdir -p static
-          wget https://github.com/lisiur/updater/releases/download/${{ github.ref_name }}/latest.json
+          wget -O docs/latest.json https://github.com/lisiur/updater/releases/download/${{ github.ref_name }}/latest.json
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
