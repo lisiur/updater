@@ -112,11 +112,13 @@ jobs:
     needs: [build-tauri, publish-release]
 
     steps:
+      - uses: actions/checkout@v3
       - run: |
-          wget -O docs/latest.json https://github.com/lisiur/updater/releases/download/${{ github.ref_name }}/latest.json
+          wget -O ${{ github.workspace }}/docs/latest.json https://github.com/lisiur/updater/releases/download/${{ github.ref_name }}/latest.json
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
           publish_dir: ./docs
     
